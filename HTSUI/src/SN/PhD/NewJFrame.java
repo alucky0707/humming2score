@@ -192,6 +192,11 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "声でパート作成", "音声サンプルからパート作成", "パートのデータを開く" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "プロジェクトを再生", "パートを再生", "指定のファイルを再生" }));
         jComboBox3.addItemListener(new java.awt.event.ItemListener() {
@@ -301,19 +306,22 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
-      int reply = jComboBox3.getSelectedIndex();
-        if(reply == 0){
-            //音声読み取りプログラムの導入
-   ReadHummingDialog dialog = new ReadHummingDialog(this, true);
-        dialog.setVisible(true);
-        }
-        
+       
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void jComboBox3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox3ItemStateChanged
        
    
     }//GEN-LAST:event_jComboBox3ItemStateChanged
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        int reply = jComboBox3.getSelectedIndex();
+        if(reply == 0){
+            //音声読み取りプログラムの導入
+   ReadHummingDialog dialog = new ReadHummingDialog(this, true);
+        dialog.setVisible(true);
+        }
+    }//GEN-LAST:event_jComboBox2ActionPerformed
    
     /**
      * @param args the command line arguments
