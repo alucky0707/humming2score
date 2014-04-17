@@ -38,7 +38,7 @@ public class H2SMainFrame extends javax.swing.JFrame {
         jTree1 = new javax.swing.JTree();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        FileSaveComboBox = new javax.swing.JComboBox();
+        SampleComboBox = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
@@ -119,10 +119,10 @@ public class H2SMainFrame extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED)));
 
-        FileSaveComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ピアノ", "ギター", "フルート", "ヴァイオリン", "カスタムサンプル" }));
-        FileSaveComboBox.addActionListener(new java.awt.event.ActionListener() {
+        SampleComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ピアノ", "ギター", "フルート", "ヴァイオリン", "カスタムサンプル" }));
+        SampleComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FileSaveComboBoxActionPerformed(evt);
+                SampleComboBoxActionPerformed(evt);
             }
         });
 
@@ -137,7 +137,7 @@ public class H2SMainFrame extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addContainerGap(20, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(FileSaveComboBox, 0, 0, Short.MAX_VALUE)
+                .addComponent(SampleComboBox, 0, 0, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -146,7 +146,7 @@ public class H2SMainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FileSaveComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SampleComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -179,20 +179,33 @@ public class H2SMainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void FileComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FileComboBoxActionPerformed
-        // TODO add your handling code here:
+        int replyfile = FileComboBox.getSelectedIndex();
+        if(replyfile == 2){
+          //  H2SFileOpener h2sfileopener = new H2SFileOpener();
+            //h2sfileopener.setVisible(true);
+        H2SFOPopup h2spopup = new H2SFOPopup();
+        h2spopup.setVisible(true);
+        
+        }
+          
+        
+         
+        
     }//GEN-LAST:event_FileComboBoxActionPerformed
 
-    private void FileSaveComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FileSaveComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FileSaveComboBoxActionPerformed
+    private void SampleComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SampleComboBoxActionPerformed
+        
+    }//GEN-LAST:event_SampleComboBoxActionPerformed
 
     private void PartCreatorComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PartCreatorComboBoxActionPerformed
         int reply = PartCreatorComboBox.getSelectedIndex();
         if(reply == 0){
             //音声読み取りプログラムの導入
    H2SSoundReader dialog = new H2SSoundReader(this, true);
-        dialog.setVisible(true);
+      dialog.setVisible(true);
+            
         }
+        
     }//GEN-LAST:event_PartCreatorComboBoxActionPerformed
 
     private void H2SInfoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_H2SInfoComboBoxActionPerformed
@@ -236,9 +249,9 @@ public class H2SMainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox FileComboBox;
-    private javax.swing.JComboBox FileSaveComboBox;
     private javax.swing.JComboBox H2SInfoComboBox;
     private javax.swing.JComboBox PartCreatorComboBox;
+    private javax.swing.JComboBox SampleComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
